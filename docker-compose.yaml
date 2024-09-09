@@ -2,6 +2,7 @@ version: '3.7'
 services:
   tesseract-ocr:
     build: .
+    image: tesseract-ocr
     container_name: tesseract-ocr
     restart: ${RESTART_POLICY}
     environment:

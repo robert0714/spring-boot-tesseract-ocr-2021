@@ -1,25 +1,24 @@
 #### Stage 1: Build the application
-FROM adoptopenjdk/openjdk11:alpine as build
+FROM eclipse-temurin:17-alpine as build
 
 RUN apk update
 
 # Install tesseract library
-RUN apk add --no-cache tesseract-ocr
-
-# Download last language package
-RUN mkdir -p /tessdata
-ADD https://github.com/tesseract-ocr/tessdata/raw/master/tur.traineddata /tessdata/tur.traineddata
-
+RUN apk add --no-cache tesseract-ocr tesseract-ocr-data-chi_tra tesseract-ocr-data-eng
+ 
+RUN echo "Installing Tesseract OCR and language packs..."
 # Check the installation status
 RUN tesseract --list-langs
 RUN tesseract -v
 
 # Set the name of the jar
-ENV APP_FILE *.jar
+#ENV APP_FILE *.jar
 
 
 # Copy our JAR
-COPY target/$APP_FILE /app.jar
+# COPY target/$APP_FILE /app.jar
+COPY target/tesseract-ocr-api-1.0.0.jar /app.jar
+  
 
 # Launch the Spring Boot application
 ENV JAVA_OPTS=""

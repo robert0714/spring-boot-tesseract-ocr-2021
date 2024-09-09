@@ -6,24 +6,30 @@
 
 ## Prerequisites
 
-* Java 11
+* Java 17
 * Maven 3.3+
 * Docker 19.03+
 * Docker Compose 1.25+
 
 ## Installation
-
+* step 1
 ```sh
-./mvnw compile jib:dockerBuild
+mvn compile jib:dockerBuild 
+```
+or
+```sh
+mvn clean package
+docker build -t tesseract-ocr .
 ```
 
+* step 2
 ```sh
 docker-compose up -d 
 ```
 
 ## Used Technologies
 
-* Spring Boot 2.4.3
+* Spring Boot 3.2.9
 * Tesseract
 * Tess4j
 * Slf4j

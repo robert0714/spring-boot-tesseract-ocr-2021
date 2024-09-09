@@ -1,9 +1,10 @@
 package com.spring.tesseract.validator
         ;
-
-import javax.validation.Constraint;
-import javax.validation.Payload;
+ 
 import java.lang.annotation.*;
+
+import jakarta.validation.Constraint;
+import jakarta.validation.Payload;
 
 @Documented
 @Target({ElementType.METHOD, ElementType.FIELD, ElementType.ANNOTATION_TYPE, ElementType.CONSTRUCTOR, ElementType.PARAMETER, ElementType.TYPE_USE})

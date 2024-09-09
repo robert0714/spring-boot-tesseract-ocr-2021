@@ -1,8 +1,5 @@
 package com.spring.tesseract.controller.rest;
-
-import com.spring.tesseract.model.response.ImageTextDto;
-import com.spring.tesseract.service.TesseractOcrService;
-import com.spring.tesseract.validator.ValidFile;
+  
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.ArraySchema;
 import io.swagger.v3.oas.annotations.media.Content;
@@ -17,6 +14,10 @@ import org.springframework.http.HttpStatus;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
+
+import com.spring.tesseract.model.response.ImageTextDto;
+import com.spring.tesseract.service.TesseractOcrService;
+import com.spring.tesseract.validator.ValidFile;
 
 import java.io.IOException;
 
