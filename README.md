@@ -13,11 +13,13 @@
 
 ## Installation
 * step 1
-```sh
+
+```bash
 mvn compile jib:dockerBuild 
 ```
 or
-```sh
+
+```bash
 mvn clean package
 docker build -t tesseract-ocr .
 ```
