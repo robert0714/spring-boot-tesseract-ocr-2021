@@ -4,6 +4,8 @@ FROM eclipse-temurin:17-alpine as build
 RUN apk update
 
 # Install tesseract library
+# You can see the below url to find other language pack to click 'Sub Packages (67) '
+# https://pkgs.alpinelinux.org/package/edge/community/x86_64/tesseract-ocr
 RUN apk add --no-cache tesseract-ocr tesseract-ocr-data-chi_tra tesseract-ocr-data-eng
  
 RUN echo "Installing Tesseract OCR and language packs..."
